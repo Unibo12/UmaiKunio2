@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c5adef051ec9444a600939300e45a0, type: 3}
   m_Name: GameSettings
   m_EditorClassIdentifier: 
-  isGamePadSetting: 0
+  isGamePadSetting: 1
   TopPlayerCameraX: 0
   DeathTime: 0

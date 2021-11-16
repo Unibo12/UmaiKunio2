@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 410762213}
   - component: {fileID: 410762212}
   - component: {fileID: 410762221}
+  - component: {fileID: 410762222}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -338,7 +339,7 @@ MonoBehaviour:
   st_life: 140
   st_punch: 10
   st_kick: 10
-  st_speed: 0.08
+  st_speed: 0.01
   st_downTime: 1
   st_brake: 0.5
   X: 0
@@ -543,6 +544,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &410762222
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410762211}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a64a7e6e0e0f2434cbf012a67a318839, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,6 +664,7 @@ GameObject:
   - component: {fileID: 664855267}
   - component: {fileID: 664855266}
   - component: {fileID: 664855273}
+  - component: {fileID: 664855274}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Untagged
@@ -964,6 +985,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &664855274
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664855263}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a64a7e6e0e0f2434cbf012a67a318839, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1161529309
 GameObject:
   m_ObjectHideFlags: 0

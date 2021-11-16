@@ -180,64 +180,64 @@ public class NekketsuAction : MonoBehaviour
 
         #endregion
 
-        // #region アニメ処理
+        #region アニメ処理
 
-        // if (NAttackV.NowDamage != DamagePattern.None)
-        // {
-        //     // ダメージアニメ処理
-        //     animator.Play(NAttackV.NowDamage.ToString());
-        // }
-        // else
-        // {
-        //     if (!NJumpV.squatFlag && !NMoveV.brakeFlag)
-        //     {
-        //         if (NAttackV.NowAttack != AttackPattern.None)
-        //         {
-        //             if (NAttackV.haveItem == ItemPattern.None)
-        //             {
-        //                 // 現在の攻撃状態をアニメーションさせる。
-        //                 animator.Play(NAttackV.NowAttack.ToString());
-        //             }
-        //             else
-        //             {
+        if (NAttackV.NowDamage != DamagePattern.None)
+        {
+            // ダメージアニメ処理
+            animator.Play(NAttackV.NowDamage.ToString());
+        }
+        else
+        {
+            if (!NJumpV.squatFlag && !NMoveV.brakeFlag)
+            {
+                if (NAttackV.NowAttack != AttackPattern.None)
+                {
+                    if (NAttackV.haveItem == ItemPattern.None)
+                    {
+                        // 現在の攻撃状態をアニメーションさせる。
+                        animator.Play(NAttackV.NowAttack.ToString());
+                    }
+                    else
+                    {
 
-        //             }
+                    }
 
-        //         }
-        //         else
-        //         {
-        //             //  攻撃以外のアニメーション
-        //             if (NVariable.vx == 0 && NVariable.vz == 0)
-        //             {
-        //                 animator.SetBool("Walk", false);
-        //             }
-        //             else
-        //             {
-        //                 animator.SetBool("Walk", true);
-        //             }
+                }
+                else
+                {
+                    //  攻撃以外のアニメーション
+                    if (NVariable.vx == 0 && NVariable.vz == 0)
+                    {
+                        animator.SetBool("Walk", false);
+                    }
+                    else
+                    {
+                        animator.SetBool("Walk", true);
+                    }
 
-        //             if (NJumpV.jumpFlag
-        //                 && NAttackV.NowDamage == DamagePattern.None)
-        //             {
-        //                 animator.Play("Jump");
-        //             }
-        //         }
-        //     }
-        //     else
-        //     {
-        //         if (NMoveV.brakeFlag)
-        //         {
-        //             animator.Play("Brake");
-        //         }
+                    if (NJumpV.jumpFlag
+                        && NAttackV.NowDamage == DamagePattern.None)
+                    {
+                        animator.Play("Jump");
+                    }
+                }
+            }
+            else
+            {
+                if (NMoveV.brakeFlag)
+                {
+                    animator.Play("Brake");
+                }
 
-        //         if (NJumpV.squatFlag)
-        //         {
-        //             animator.Play("Squat");
-        //         }
-        //     }
-        // }
+                if (NJumpV.squatFlag)
+                {
+                    animator.Play("Squat");
+                }
+            }
+        }
 
-        // #endregion
+        #endregion
 
         #region 失格判定(ゲームシーンから削除)
 
