@@ -23,17 +23,18 @@ public class Settings : SingletonMonoBehaviour<Settings>
         }
 	}
 
-[CustomEditor(typeof(Settings))]
-public class DefineEditor : Editor
-{
-	public override void OnInspectorGUI()
-	{
-		base.OnInspectorGUI();
 
-		if (GUILayout.Button("LoadObject"))
-		{
-			(target as Settings).LoadObject();
-		}
-	}
+// [CustomEditor(typeof(Settings))]
+// public class DefineEditor : Editor
+// {
+// 	public override void OnInspectorGUI()
+// 	{
+// 		base.OnInspectorGUI();
 
-}
+// 		if (GUILayout.Button("LoadObject"))
+// 		{
+// 			(target as Settings).LoadObject();
+// 		}
+// 	}
+
+// }
