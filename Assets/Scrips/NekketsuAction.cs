@@ -44,6 +44,8 @@ public class NekketsuAction : MonoBehaviour
 
     private NekketsuHaveItem NHaveItem; //所持アイテム処理
 
+    private NekketsuScoreManger NScore; //スコア
+
     // private NekketsuMerikomiCheck NMerikomiCheck;   //壁・地面めり込みチェック
     //影の位置
     Transform shadeTransform;
@@ -93,7 +95,6 @@ public class NekketsuAction : MonoBehaviour
         // //★テスト　民家のテーブルの高さを固定で設定してみる★
         // //X座標はオブジェクトの中心部を指す為、中止部から全体幅÷2したものを加減算
         // if (Nmng.MapObjct1.TopBox.x - (Nmng.MapObjct1.myObjectWidth / 2) <= NVariable.X
-
         //     && NVariable.X <= Nmng.MapObjct1.TopBox.x + (Nmng.MapObjct1.myObjectWidth / 2)
         //     && Nmng.MapObjct1.TopBox.yMin <= NVariable.Z && NVariable.Z <= Nmng.MapObjct1.TopBox.yMax)
         // {
