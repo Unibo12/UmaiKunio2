@@ -7,39 +7,55 @@ using UnityEngine;
 /// </summary>
 public class NekketsuAction : MonoBehaviour
 {
-    #region 変数定義
+#region 変数定義
+    Vector3 pos; //最終的な描画で使用
 
-    Vector3 pos;               //最終的な描画で使用
-    public Animator animator;  //アニメ変更用
-    GameObject ThisGameObjct;   //自身にアタッチされたゲームオブジェクト取得用
-    GameObject NmngGameObjct;   //熱血マネージャ取得用
+    public Animator animator; //アニメ変更用
+
+    GameObject ThisGameObjct; //自身にアタッチされたゲームオブジェクト取得用
+
+    GameObject NmngGameObjct; //熱血マネージャ取得用
 
     //変数クラス
-    public NekketsuVariable NVariable;      //座標・ステータス変数
-    public NekketsuMoveVariable NMoveV;     //移動関連変数
-    public NekketsuJumpVariable NJumpV;     //ジャンプ関連変数
+    public NekketsuVariable NVariable; //座標・ステータス変数
+
+    public NekketsuMoveVariable NMoveV; //移動関連変数
+
+    public NekketsuJumpVariable NJumpV; //ジャンプ関連変数
+
     public NekketsuAttackVariable NAttackV; //攻撃関連変数
 
     //各処理を呼び出す為の定義
-    public NekketsuManager Nmng;                    //熱血マネージャ
-    private NekketsuSound NSound;                   //効果音
-    private NekketsuAttack NAttack;                 //攻撃処理
-    private NekketsuMove NMove;                     //移動処理
-    private NekketsuJump NJump;                     //ジャンプ処理
-    private NekketsuInput NInput;                   //キー入力受付
-    private NekketsuHurtBox NHurtBox;               //喰らい判定処理
-    private NekketsuStateChange NStateChange;       //状態変化処理
-    private NekketsuHaveItem NHaveItem;             //所持アイテム処理
-    // private NekketsuMerikomiCheck NMerikomiCheck;   //壁・地面めり込みチェック
+    public NekketsuManager Nmng; //熱血マネージャ
 
+    private NekketsuSound NSound; //効果音
+
+    private NekketsuAttack NAttack; //攻撃処理
+
+    private NekketsuMove NMove; //移動処理
+
+    private NekketsuJump NJump; //ジャンプ処理
+
+    private NekketsuInput NInput; //キー入力受付
+
+    private NekketsuHurtBox NHurtBox; //喰らい判定処理
+
+    private NekketsuStateChange NStateChange; //状態変化処理
+
+    private NekketsuHaveItem NHaveItem; //所持アイテム処理
+
+    // private NekketsuMerikomiCheck NMerikomiCheck;   //壁・地面めり込みチェック
     //影の位置
     Transform shadeTransform;
 
-    #endregion
+
+#endregion
+
 
     void Start()
     {
         // 最初に行う
+        Application.targetFrameRate = 60;
         pos = transform.position;
         animator = this.GetComponent<Animator>();
 
@@ -62,26 +78,26 @@ public class NekketsuAction : MonoBehaviour
         NHurtBox = new NekketsuHurtBox(this);
         NStateChange = new NekketsuStateChange(this);
         NHaveItem = new NekketsuHaveItem(this);
-        // NMerikomiCheck = new NekketsuMerikomiCheck(this);
 
-        shadeTransform = GameObject.Find(this.gameObject.name + "_Shade").transform;
+        // NMerikomiCheck = new NekketsuMerikomiCheck(this);
+        shadeTransform =
+            GameObject.Find(this.gameObject.name + "_Shade").transform;
 
         NVariable.map = new float[0, 0, 0];
     }
 
     void Update()
-    { // ずっと行う
-
+    {
+        // ずっと行う
         //NVariable.mapY= NVariable.map[(int)NVariable.X, (int)NVariable.Y, (int)NVariable.Z];
-
         // //★テスト　民家のテーブルの高さを固定で設定してみる★
         // //X座標はオブジェクトの中心部を指す為、中止部から全体幅÷2したものを加減算
-        // if (Nmng.MapObjct1.TopBox.x - (Nmng.MapObjct1.myObjectWidth / 2) <= NVariable.X 
+        // if (Nmng.MapObjct1.TopBox.x - (Nmng.MapObjct1.myObjectWidth / 2) <= NVariable.X
+
         //     && NVariable.X <= Nmng.MapObjct1.TopBox.x + (Nmng.MapObjct1.myObjectWidth / 2)
         //     && Nmng.MapObjct1.TopBox.yMin <= NVariable.Z && NVariable.Z <= Nmng.MapObjct1.TopBox.yMax)
         // {
         //     NVariable.mapY = Nmng.MapObjct1.topBoxY;
-
         //     //if (NJumpV.squatFlag)
         //     //{
         //     //}
@@ -90,7 +106,6 @@ public class NekketsuAction : MonoBehaviour
         // {
         //     NVariable.mapY = 0;
         // }
-
         NVariable.mapY = 0;
 
         NVariable.vx = 0;
@@ -101,15 +116,14 @@ public class NekketsuAction : MonoBehaviour
 
         // 攻撃の処理
         //NAttack.AttackMain();
-
         // 移動処理呼び出し
-        NMove.MoveMain(NSound);
+        NMove.MoveMain (NSound);
 
         // ジャンプ処理呼び出し
-        NJump.JumpMain(NSound);
+        NJump.JumpMain (NSound);
 
         // 攻撃喰らい判定
-        NHurtBox.HurtBoxMain(NSound);
+        NHurtBox.HurtBoxMain (NSound);
 
         // 所持アイテムの管理
         NHaveItem.NekketsuHaveItemMain();
@@ -120,11 +134,11 @@ public class NekketsuAction : MonoBehaviour
         // // 壁・地面のめり込み状態をチェックし、必要であれば補正
         // NMerikomiCheck.MerikomiMain();
 
-        #region 画面への描画
+#region 画面への描画
         // 入力された内部XYZをtransformに設定する。
-
         //座標への速度反映
         NVariable.X += NVariable.vx;
+
         //Y += vy;
         NVariable.Z += NVariable.vz;
 
@@ -134,21 +148,28 @@ public class NekketsuAction : MonoBehaviour
         transform.position = pos;
 
         // 喰らい判定の移動
-        if (NAttackV.NowDamage == DamagePattern.UmaTaore
-            || NAttackV.NowDamage == DamagePattern.UmaTaoreUp)
+        if (
+            NAttackV.NowDamage == DamagePattern.UmaTaore ||
+            NAttackV.NowDamage == DamagePattern.UmaTaoreUp
+        )
         {
             //倒れ状態の当たり判定(アイテム化)
-            NAttackV.hurtBox = new Rect(NVariable.X, NVariable.Y + NVariable.Z, 1.6f, 0.7f);
+            NAttackV.hurtBox =
+                new Rect(NVariable.X, NVariable.Y + NVariable.Z, 1.6f, 0.7f);
         }
         else
         {
             //通常当たり判定
-            NAttackV.hurtBox = new Rect(NVariable.X, NVariable.Y + NVariable.Z, 0.7f, 1.6f);
+            NAttackV.hurtBox =
+                new Rect(NVariable.X, NVariable.Y + NVariable.Z, 0.7f, 1.6f);
         }
 
-        #endregion
 
-        #region スプライト反転処理
+#endregion
+
+
+
+#region スプライト反転処理
         Vector3 scale = transform.localScale;
         if (NMoveV.leftFlag)
         {
@@ -160,16 +181,17 @@ public class NekketsuAction : MonoBehaviour
         }
 
         transform.localScale = scale;
-        #endregion
+#endregion
 
-        #region キャラクターの影の位置描画処理
+
+
+#region キャラクターの影の位置描画処理
 
         pos.y = NVariable.mapY + NVariable.Z - 0.8f;
 
         if (!NJumpV.squatFlag)
         {
             pos.y = NVariable.mapY + NVariable.Z - 0.8f;
-
         }
         else if (NJumpV.jumpFlag)
         {
@@ -178,10 +200,12 @@ public class NekketsuAction : MonoBehaviour
 
         shadeTransform.position = pos;
 
-        #endregion
 
-        #region アニメ処理
+#endregion
 
+
+
+#region アニメ処理
         if (NAttackV.NowDamage != DamagePattern.None)
         {
             // ダメージアニメ処理
@@ -200,9 +224,7 @@ public class NekketsuAction : MonoBehaviour
                     }
                     else
                     {
-
                     }
-
                 }
                 else
                 {
@@ -216,8 +238,10 @@ public class NekketsuAction : MonoBehaviour
                         animator.SetBool("Walk", true);
                     }
 
-                    if (NJumpV.jumpFlag
-                        && NAttackV.NowDamage == DamagePattern.None)
+                    if (
+                        NJumpV.jumpFlag &&
+                        NAttackV.NowDamage == DamagePattern.None
+                    )
                     {
                         animator.Play("Jump");
                     }
@@ -237,16 +261,20 @@ public class NekketsuAction : MonoBehaviour
             }
         }
 
-        #endregion
 
-        #region 失格判定(ゲームシーンから削除)
+#endregion
+
+
+
+#region 失格判定(ゲームシーンから削除)
 
         if (NVariable.DeathFlag == DeathPattern.death)
         {
             Destroy(this.gameObject);
         }
 
-        #endregion
+
+#endregion
     }
 
     // void OnDrawGizmos()

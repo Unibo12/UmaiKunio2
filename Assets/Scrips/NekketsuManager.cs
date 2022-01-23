@@ -16,22 +16,27 @@ public class NekketsuManager : MonoBehaviour
 
     //アイテム
     private GameObject ItemObjct;
+
     public item Item1;
 
     //マップ上の障害物
     private GameObject MapObjct;
-    public  Object MapObjct1;
+
+    public Object MapObjct1;
 
     //　★デバッグ用★
     public UmaiboSandbag sandbag;
-    public DamageTest uni;
-    public DamageTest uni2;
-    //　★デバッグ用★
 
+    public DamageTest uni;
+
+    public DamageTest uni2;
+
+    //　★デバッグ用★
     public NekketsuAction NAct; //NekketsuActionが入る変数
+
     public UmaiboSandbag UmaSnd; //NekketsuActionが入る変数
 
-    void Start()    
+    void Start()
     {
         Player = new NekketsuAction[2];
 
@@ -47,7 +52,6 @@ public class NekketsuManager : MonoBehaviour
 
         //playerObjct = GameObject.Find("Player4");
         //Player4 = playerObjct.GetComponent<NekketsuAction>();
-
 
         // ItemObjct = GameObject.Find("bokutou");
         // Item1 = ItemObjct.GetComponent<item>();
@@ -66,9 +70,7 @@ public class NekketsuManager : MonoBehaviour
 
     void Update()
     {
-
     }
-
 
     void GetMapObject()
     {
