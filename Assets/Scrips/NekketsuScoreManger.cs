@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class NekketsuScoreManger : MonoBehaviour
 {
-    NekketsuAction NAct; //NekketsuActionが入る変数
+    public NekketsuManager NMng; //NekketsuManagerが入る変数
 
     public GameObject score_object = null; // Textオブジェクト
 
@@ -14,9 +14,9 @@ public class NekketsuScoreManger : MonoBehaviour
 
     private TextMeshProUGUI score_text;
 
-    public NekketsuScoreManger(NekketsuAction nekketsuAction)
+    public NekketsuScoreManger(NekketsuManager nekketsuManager)
     {
-        NAct = nekketsuAction;
+        NMng = nekketsuManager;
     }
 
     // 初期化
@@ -31,8 +31,9 @@ public class NekketsuScoreManger : MonoBehaviour
         score_text = score_object.GetComponent<TextMeshProUGUI>();
 
         // テキストの表示を入れ替える
-        score_text.text = "Score:" + score_num;
-
-        score_num += 1; // とりあえず1加算し続けてみる
+        score_text.text =
+            NMng.Player[0].NVariable.st_life.ToString() +
+            '|' +
+            NMng.Player[1].NVariable.st_life.ToString();
     }
 }
