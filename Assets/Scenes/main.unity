@@ -854,7 +854,7 @@ MonoBehaviour:
   st_life: 140
   st_punch: 10
   st_kick: 10
-  st_speed: 0.04
+  st_speed: 0.07
   st_downTime: 1
   st_brake: 0.5
   X: 0
