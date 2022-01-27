@@ -401,7 +401,7 @@ public class NekketsuHurtBox
         // 自分から見て、他プレイヤーの情報を取得
         switch (NAct.gameObject.name)
         {
-            case "Player1":
+            case "Player0":
                 otherPlayerX = NAct.Nmng.Player[1].NVariable.X;
                 otherPlayerZ = NAct.Nmng.Player[1].NVariable.Z;
                 otherPlayerPunch = NAct.Nmng.Player[1].NVariable.st_punch;
@@ -411,7 +411,7 @@ public class NekketsuHurtBox
                 otherPlayeAttackHit = NAct.Nmng.Player[1].NAttackV.MyAttackHit;
                 break;
 
-            case "Player2":
+            case "Player1":
                 otherPlayerX = NAct.Nmng.Player[0].NVariable.X;
                 otherPlayerZ = NAct.Nmng.Player[0].NVariable.Z;
                 otherPlayerPunch = NAct.Nmng.Player[0].NVariable.st_punch;
@@ -431,11 +431,11 @@ public class NekketsuHurtBox
         // 自分から見て、他プレイヤーの情報を取得
         switch (NAct.gameObject.name)
         {
-            case "Player1":
+            case "Player0":
                 NAct.Nmng.Player[1].NAttackV.MyAttackHit = true;
                 break;
 
-            case "Player2":
+            case "Player1":
                 NAct.Nmng.Player[0].NAttackV.MyAttackHit = true;
                 break;
         }

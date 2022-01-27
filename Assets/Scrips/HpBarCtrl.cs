@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class HpBarCtrl : MonoBehaviour
 {
     GameObject PlayerObjct;
+
     NekketsuManager Nmng;
 
     Slider Slider;
+
     void Start()
     {
         PlayerObjct = GameObject.Find("NekketsuManager");

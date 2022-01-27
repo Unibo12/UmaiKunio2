@@ -20,7 +20,7 @@ public class TitleManager : MonoBehaviour
             ChangeScene cs = menu.GetComponent<ChangeScene>();
             if (cs != null)
             {
-                cs.Load();
+                cs.PlayerLoad();
             }
         }
     }

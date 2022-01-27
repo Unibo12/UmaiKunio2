@@ -8,6 +8,8 @@ public class NekketsuManager : MonoBehaviour
 {
     private GameObject playerObjct;
 
+    public int playerCount;
+
     /// @@@PlayerXのように連番になるようなものはリストか配列で管理するほうが良いです
     /// リストは数が可変するもの、配列は変わらない予定のものという判断で大丈夫です
     /// 配列で管理するとインデックスでキャラを管理、判断できるので
@@ -38,14 +40,16 @@ public class NekketsuManager : MonoBehaviour
 
     void Start()
     {
-        Player = new NekketsuAction[2];
+        Player = new NekketsuAction[playerCount];
+        for (int i = 0; i < playerCount; ++i)
+        {
+            // 各オブジェクトの変数を参照できるようにする。
+            playerObjct = GameObject.Find("Player" + i.ToString());
+            Player[i] = playerObjct.GetComponent<NekketsuAction>();
+        }
 
-        // 各オブジェクトの変数を参照できるようにする。
-        playerObjct = GameObject.Find("Player1");
-        Player[0] = playerObjct.GetComponent<NekketsuAction>();
-
-        playerObjct = GameObject.Find("Player2");
-        Player[1] = playerObjct.GetComponent<NekketsuAction>();
+        // playerObjct = GameObject.Find("Player1");
+        // Player[1] = playerObjct.GetComponent<NekketsuAction>();
 
         //playerObjct = GameObject.Find("Player3");
         //Player3 = playerObjct.GetComponent<NekketsuAction>();

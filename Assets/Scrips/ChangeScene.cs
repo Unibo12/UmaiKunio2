@@ -10,18 +10,40 @@ public class ChangeScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     // シーンを読み込む
-    public void Load()
+    public void SceneLoad()
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene (sceneName);
+    }
+
+    // シーンを読み込む
+    public void PlayerLoad()
+    {
+        // イベントに登録
+        SceneManager.sceneLoaded += GameSceneLoaded;
+        
+        SceneManager.LoadScene (sceneName);
+    }
+
+    private void GameSceneLoaded(Scene next, LoadSceneMode mode)
+    {
+        // シーン切り替え後のスクリプトを取得
+        var nekketsuManager =
+            GameObject
+                .FindWithTag("NekketsuManager")
+                .GetComponent<NekketsuManager>();
+
+        // データを渡す処理
+        nekketsuManager.playerCount = 4;
+
+        // イベントから削除
+        SceneManager.sceneLoaded -= GameSceneLoaded;
     }
 }
