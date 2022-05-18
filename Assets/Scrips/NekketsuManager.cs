@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 /// <summary>
 /// 各オブジェクト(プレイヤー・アイテム)等が
@@ -14,7 +15,11 @@ public class NekketsuManager : MonoBehaviour
     /// リストは数が可変するもの、配列は変わらない予定のものという判断で大丈夫です
     /// 配列で管理するとインデックスでキャラを管理、判断できるので
     /// 後々楽になります
-    public NekketsuAction[] Player;
+    public NekketsuAction[] Players;
+
+    // public NekketsuHitBox[] HitBoxs;
+
+    public List<NekketsuHitBox> hitBoxes;
 
     //アイテム
     private GameObject ItemObjct;
@@ -40,36 +45,13 @@ public class NekketsuManager : MonoBehaviour
 
     void Start()
     {
-        Player = new NekketsuAction[playerCount];
+        Players = new NekketsuAction[playerCount];
         for (int i = 0; i < playerCount; ++i)
         {
             // 各オブジェクトの変数を参照できるようにする。
             playerObjct = GameObject.Find("Player" + i.ToString());
-            Player[i] = playerObjct.GetComponent<NekketsuAction>();
+            Players[i] = playerObjct.GetComponent<NekketsuAction>();
         }
-
-        // playerObjct = GameObject.Find("Player1");
-        // Player[1] = playerObjct.GetComponent<NekketsuAction>();
-
-        //playerObjct = GameObject.Find("Player3");
-        //Player3 = playerObjct.GetComponent<NekketsuAction>();
-
-        //playerObjct = GameObject.Find("Player4");
-        //Player4 = playerObjct.GetComponent<NekketsuAction>();
-
-        // ItemObjct = GameObject.Find("bokutou");
-        // Item1 = ItemObjct.GetComponent<item>();
-
-        // //障害物取得
-        // GetMapObject();
-
-        // //　★デバッグ用★
-        // playerObjct = GameObject.Find("UmaiboSandbag");
-        // sandbag = playerObjct.GetComponent<UmaiboSandbag>();
-
-        // playerObjct = GameObject.Find("uni");
-        // uni = playerObjct.GetComponent<DamageTest>();
-        // //　★デバッグ用★
     }
 
     void Update()

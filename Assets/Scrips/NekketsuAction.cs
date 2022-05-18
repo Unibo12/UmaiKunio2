@@ -40,6 +40,8 @@ public class NekketsuAction : MonoBehaviour
 
     private NekketsuHurtBox NHurtBox; //喰らい判定処理
 
+    private NekketsuHurtBox2 NHurtBox2; //喰らい判定処理
+
     private NekketsuStateChange NStateChange; //状態変化処理
 
     private NekketsuHaveItem NHaveItem; //所持アイテム処理

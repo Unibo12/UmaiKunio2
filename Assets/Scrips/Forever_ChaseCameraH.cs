@@ -31,12 +31,12 @@ public class Forever_ChaseCameraH : MonoBehaviour
     {
         // ずっと行う（いろいろな処理の最後に）
         //何プレイヤーが先頭を走っているか取得
-        int topPlayerNum = TopPlayerNumber(Nmng);
+        int topPlayerNum = getTopPlayerNumber(Nmng);
 
         //カメラは先頭を走るプレイヤーを追いかける
-        TopPlayerX = Nmng.Player[topPlayerNum].NVariable.X;
+        TopPlayerX = Nmng.Players[topPlayerNum].NVariable.X;
         pos.x =
-            Nmng.Player[topPlayerNum].NVariable.X +
+            Nmng.Players[topPlayerNum].NVariable.X +
             Settings.Instance.Game.TopPlayerCameraX;
 
         pos.z = -10; // カメラ位置なのでプレイヤーよりやや手前に移動させる
@@ -49,7 +49,7 @@ public class Forever_ChaseCameraH : MonoBehaviour
     /// </summary>
     /// <param name="Nmng"></param>
     /// <returns>TopPlayerNum</returns>
-    int TopPlayerNumber(NekketsuManager Nmng)
+    int getTopPlayerNumber(NekketsuManager Nmng)
     {
         float[] playersX;
         int TopPlayerNum = 0;
@@ -58,11 +58,11 @@ public class Forever_ChaseCameraH : MonoBehaviour
 
         for (int i = 0; i < Nmng.playerCount; ++i)
         {
-            playersX[i] = Nmng.Player[i].NVariable.X;
+            playersX[i] = Nmng.Players[i].NVariable.X;
         }
 
         int top = maxIndex(playersX);
-        if (Nmng.Player[top].NVariable.DeathFlag != DeathPattern.death)
+        if (Nmng.Players[top].NVariable.DeathFlag != DeathPattern.death)
         {
             TopPlayerNum = top;
         }

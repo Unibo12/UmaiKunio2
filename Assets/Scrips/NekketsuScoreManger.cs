@@ -32,8 +32,8 @@ public class NekketsuScoreManger : MonoBehaviour
 
         // テキストの表示を入れ替える
         score_text.text =
-            NMng.Player[0].NVariable.st_life.ToString() +
+            NMng.Players[0].NVariable.st_life.ToString() +
             '|' +
-            NMng.Player[1].NVariable.st_life.ToString();
+            NMng.Players[1].NVariable.st_life.ToString();
     }
 }
