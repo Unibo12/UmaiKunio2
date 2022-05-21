@@ -499,7 +499,6 @@ MonoBehaviour:
   NMoveV: {fileID: 0}
   NJumpV: {fileID: 0}
   NAttackV: {fileID: 0}
-  NHitBoxV: {fileID: 0}
   Nmng: {fileID: 0}
 --- !u!212 &313008890
 SpriteRenderer:
@@ -745,7 +744,6 @@ MonoBehaviour:
   NMoveV: {fileID: 0}
   NJumpV: {fileID: 0}
   NAttackV: {fileID: 0}
-  NHitBoxV: {fileID: 0}
   Nmng: {fileID: 0}
 --- !u!212 &410762219
 SpriteRenderer:
@@ -1343,7 +1341,6 @@ MonoBehaviour:
   NMoveV: {fileID: 0}
   NJumpV: {fileID: 0}
   NAttackV: {fileID: 0}
-  NHitBoxV: {fileID: 0}
   Nmng: {fileID: 0}
 --- !u!82 &664855273
 AudioSource:
@@ -1854,7 +1851,6 @@ MonoBehaviour:
   NMoveV: {fileID: 0}
   NJumpV: {fileID: 0}
   NAttackV: {fileID: 0}
-  NHitBoxV: {fileID: 0}
   Nmng: {fileID: 0}
 --- !u!212 &967639909
 SpriteRenderer:
