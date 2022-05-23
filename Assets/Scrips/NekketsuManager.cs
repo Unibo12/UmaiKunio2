@@ -18,7 +18,6 @@ public class NekketsuManager : MonoBehaviour
     public NekketsuAction[] Players;
 
     // public NekketsuHitBox[] HitBoxs;
-
     public List<NekketsuHitBox> hitBoxes;
 
     //アイテム
