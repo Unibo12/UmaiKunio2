@@ -41,7 +41,7 @@ public class ChangeScene : MonoBehaviour
                 .GetComponent<NekketsuManager>();
 
         // データを渡す処理
-        nekketsuManager.playerCount = 4;
+        nekketsuManager.playerCount = 1;
 
         // イベントから削除
         SceneManager.sceneLoaded -= GameSceneLoaded;

@@ -401,25 +401,25 @@ public class NekketsuHurtBox
         // 自分から見て、他プレイヤーの情報を取得
         switch (NAct.gameObject.name)
         {
-            case "Player0":
-                otherPlayerX = NAct.Nmng.Players[1].NVariable.X;
-                otherPlayerZ = NAct.Nmng.Players[1].NVariable.Z;
-                otherPlayerPunch = NAct.Nmng.Players[1].NVariable.st_punch;
-                otherPlayerKick = NAct.Nmng.Players[1].NVariable.st_kick;
-                otherPlayerAttack = NAct.Nmng.Players[1].NAttackV.NowAttack;
-                otherHitBox = NAct.Nmng.Players[1].NAttackV.hitBox;
-                otherPlayeAttackHit = NAct.Nmng.Players[1].NAttackV.MyAttackHit;
-                break;
+            // case "Player0":
+            //     otherPlayerX = NAct.Nmng.Players[1].NVariable.X;
+            //     otherPlayerZ = NAct.Nmng.Players[1].NVariable.Z;
+            //     otherPlayerPunch = NAct.Nmng.Players[1].NVariable.st_punch;
+            //     otherPlayerKick = NAct.Nmng.Players[1].NVariable.st_kick;
+            //     otherPlayerAttack = NAct.Nmng.Players[1].NAttackV.NowAttack;
+            //     otherHitBox = NAct.Nmng.Players[1].NAttackV.hitBox;
+            //     otherPlayeAttackHit = NAct.Nmng.Players[1].NAttackV.MyAttackHit;
+            //     break;
 
-            case "Player1":
-                otherPlayerX = NAct.Nmng.Players[0].NVariable.X;
-                otherPlayerZ = NAct.Nmng.Players[0].NVariable.Z;
-                otherPlayerPunch = NAct.Nmng.Players[0].NVariable.st_punch;
-                otherPlayerKick = NAct.Nmng.Players[0].NVariable.st_kick;
-                otherPlayerAttack = NAct.Nmng.Players[0].NAttackV.NowAttack;
-                otherHitBox = NAct.Nmng.Players[0].NAttackV.hitBox;
-                otherPlayeAttackHit = NAct.Nmng.Players[0].NAttackV.MyAttackHit;
-                break;
+            // case "Player1":
+            //     otherPlayerX = NAct.Nmng.Players[0].NVariable.X;
+            //     otherPlayerZ = NAct.Nmng.Players[0].NVariable.Z;
+            //     otherPlayerPunch = NAct.Nmng.Players[0].NVariable.st_punch;
+            //     otherPlayerKick = NAct.Nmng.Players[0].NVariable.st_kick;
+            //     otherPlayerAttack = NAct.Nmng.Players[0].NAttackV.NowAttack;
+            //     otherHitBox = NAct.Nmng.Players[0].NAttackV.hitBox;
+            //     otherPlayeAttackHit = NAct.Nmng.Players[0].NAttackV.MyAttackHit;
+            //     break;
         }
     }
 

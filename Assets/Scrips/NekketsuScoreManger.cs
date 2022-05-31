@@ -30,10 +30,10 @@ public class NekketsuScoreManger : MonoBehaviour
         // オブジェクトからTextコンポーネントを取得
         score_text = score_object.GetComponent<TextMeshProUGUI>();
 
-        // テキストの表示を入れ替える
-        score_text.text =
-            NMng.Players[0].NVariable.st_life.ToString() +
-            '|' +
-            NMng.Players[1].NVariable.st_life.ToString();
+        // // テキストの表示を入れ替える
+        // score_text.text =
+        //     NMng.Players[0].NVariable.st_life.ToString() +
+        //     '|' +
+        //     NMng.Players[1].NVariable.st_life.ToString();
     }
 }

@@ -234,11 +234,11 @@ public class NekketsuAction : MonoBehaviour
                     //  攻撃以外のアニメーション
                     if (NVariable.vx == 0 && NVariable.vz == 0)
                     {
-                        animator.SetBool("Walk", false);
+                        animator.SetBool("walk", false);
                     }
                     else
                     {
-                        animator.SetBool("Walk", true);
+                        animator.SetBool("walk", true);
                     }
 
                     if (
