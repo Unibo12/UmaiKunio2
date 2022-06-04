@@ -20,9 +20,9 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 4942070e16766b44c939b6b0dae647d7, type: 3}
+      value: {fileID: -816272470, guid: d612619d724724347ae1ddf4d9329f55, type: 3}
     - time: 0.125
-      value: {fileID: 21300000, guid: c66dc0f13f0898c498caed2e02978ec0, type: 3}
+      value: {fileID: 364374726, guid: d612619d724724347ae1ddf4d9329f55, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -42,8 +42,8 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 4942070e16766b44c939b6b0dae647d7, type: 3}
-    - {fileID: 21300000, guid: c66dc0f13f0898c498caed2e02978ec0, type: 3}
+    - {fileID: -816272470, guid: d612619d724724347ae1ddf4d9329f55, type: 3}
+    - {fileID: 364374726, guid: d612619d724724347ae1ddf4d9329f55, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -72,16 +72,14 @@ AnimationClip:
   - time: 0
     functionName: DosukoiFront
     data: 
-    objectReferenceParameter: {fileID: 11500000, guid: c2180855117551649aac4b5b60a839e5,
-      type: 3}
+    objectReferenceParameter: {fileID: 11500000, guid: c2180855117551649aac4b5b60a839e5, type: 3}
     floatParameter: 1
     intParameter: 0
     messageOptions: 0
   - time: 0.125
     functionName: DosukoiFront
     data: 
-    objectReferenceParameter: {fileID: 11500000, guid: c2180855117551649aac4b5b60a839e5,
-      type: 3}
+    objectReferenceParameter: {fileID: 11500000, guid: c2180855117551649aac4b5b60a839e5, type: 3}
     floatParameter: 2
     intParameter: 0
     messageOptions: 0
