@@ -10,4 +10,5 @@ public class NekketsuJumpVariable : MonoBehaviour
     public bool jumpFlag = false;               //ジャンプして空中にいるか
     public bool squatFlag = false;              //しゃがみ状態フラグ    
     public JumpButtonPushState JumpButtonState; //ジャンプボタン押下ステータス
+    public float InitalVelocity = 0.188f;       // ジャンプ初速
 }

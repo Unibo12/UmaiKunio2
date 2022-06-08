@@ -153,7 +153,7 @@ public class NekketsuJump
                 {
                     NAct.NJumpV.jumpFlag = true; // ジャンプの準備
                     miniJumpFlag = false; // 小ジャンプ
-                    NAct.NVariable.vy += NAct.NMoveV.InitalVelocity; // ジャンプした瞬間に初速を追加
+                    NAct.NVariable.vy += NAct.NJumpV.InitalVelocity; // ジャンプした瞬間に初速を追加
                     jumpAccelerate = true; // ジャンプ加速度の計算を行う
 
                     if (NAct.NMoveV.XInputState == XInputState.XNone
@@ -239,7 +239,7 @@ public class NekketsuJump
                     NAct.NJumpV.squatFlag = true; //しゃがみ状態
                     NAct.NJumpV.jumpSpeed = 0;    //ジャンプ速度初期化
 
-                    if (NAct.NMoveV.InitalVelocity != 0)
+                    if (NAct.NJumpV.InitalVelocity != 0)
                     {
                         // 内部Y軸変数を初期値に戻す
                         NAct.NVariable.vy = 0;

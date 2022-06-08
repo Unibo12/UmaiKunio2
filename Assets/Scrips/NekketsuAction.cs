@@ -158,13 +158,13 @@ public class NekketsuAction : MonoBehaviour
         {
             //倒れ状態の当たり判定(アイテム化)
             NAttackV.hurtBox =
-                new Rect(NVariable.X, NVariable.Y + NVariable.Z, 1.6f, 0.7f);
+                new Rect(NVariable.X, NVariable.Y + NVariable.Z, NAttackV.hurtBox.height, NAttackV.hurtBox.width);
         }
         else
         {
             //通常当たり判定
             NAttackV.hurtBox =
-                new Rect(NVariable.X, NVariable.Y + NVariable.Z, 0.7f, 1.6f);
+                new Rect(NVariable.X, NVariable.Y + NVariable.Z, NAttackV.hurtBox.width, NAttackV.hurtBox.height);
         }
 
 
@@ -190,11 +190,11 @@ public class NekketsuAction : MonoBehaviour
 
 #region キャラクターの影の位置描画処理
 
-        pos.y = NVariable.mapY + NVariable.Z - 0.8f;
+        pos.y = NVariable.mapY + NVariable.Z - 0.25f;
 
         if (!NJumpV.squatFlag)
         {
-            pos.y = NVariable.mapY + NVariable.Z - 0.8f;
+            pos.y = NVariable.mapY + NVariable.Z - 0.25f;
         }
         else if (NJumpV.jumpFlag)
         {

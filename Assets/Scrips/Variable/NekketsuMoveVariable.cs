@@ -5,7 +5,6 @@ using UnityEngine;
 public class NekketsuMoveVariable : MonoBehaviour
 {
     //移動
-    public float InitalVelocity = 0.188f;       // 内部での初速
     public float nextButtonDownTimeDash = 1f;   // ダッシュを受け付ける時間
     public bool leftFlag = false;   //左向きかどうか
     public bool dashFlag = false;   //走っているか否か
