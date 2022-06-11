@@ -6,15 +6,15 @@ using UnityEngine;
 /// 攻撃の状態・攻撃当たり判定を管理するクラス
 /// 各攻撃メソッドはアニメーションから、モーションの毎に呼び出される
 /// </summary>
-
 // memo
 // 現状はアニメーションから各攻撃functionが呼び出されているのみ
-
 public class NekketsuAttack : MonoBehaviour
 {
     GameObject gameObjct;
     NekketsuAction NAct;
     NekketsuSound NSound;
+
+    AttackSettings ASettings;
 
     public NekketsuAttack(NekketsuAction nekketsuAction)
     {
@@ -26,6 +26,7 @@ public class NekketsuAttack : MonoBehaviour
         gameObjct = GameObject.Find("NekketsuManager");
         NSound = this.gameObject.GetComponent<NekketsuSound>();
         NAct = this.gameObject.GetComponent<NekketsuAction>();
+        ASettings = Settings.Instance.Attack;
     }
 
     void Update()
@@ -71,20 +72,22 @@ public class NekketsuAttack : MonoBehaviour
             {
                 case 1:
                     NAct.NAttackV.hitBox =
-                        new Rect(hitBoxX + (0.6f * leftMinusVector),
-                            hitBoxY + 0.2f,
-                            0.6f,
-                            0.5f);
+                        new Rect(hitBoxX +
+                            (ASettings.DosukoiSide.x * leftMinusVector),
+                            hitBoxY + ASettings.DosukoiSide.y,
+                            ASettings.DosukoiSide.width,
+                            ASettings.DosukoiSide.height);
 
                     NSound.SEPlay(SEPattern.attack);
 
                     break;
                 case 2:
                     NAct.NAttackV.hitBox =
-                        new Rect(hitBoxX + (0.6f * leftMinusVector),
-                            hitBoxY + 0.2f,
-                            0.6f,
-                            0.5f);
+                        new Rect(hitBoxX +
+                            (ASettings.DosukoiSide.x * leftMinusVector),
+                            hitBoxY + ASettings.DosukoiSide.y,
+                            ASettings.DosukoiSide.width,
+                            ASettings.DosukoiSide.height);
 
                     NAct.NAttackV.NowAttack = AttackPattern.None;
 
@@ -107,19 +110,21 @@ public class NekketsuAttack : MonoBehaviour
         {
             case 1:
                 NAct.NAttackV.hitBox =
-                    new Rect(hitBoxX + (0.3f * leftMinusVector),
-                        hitBoxY + 0.2f,
-                        0.4f,
-                        0.5f);
+                    new Rect(hitBoxX +
+                        (ASettings.DosukoiBack.x * leftMinusVector),
+                        hitBoxY + ASettings.DosukoiSide.y,
+                        ASettings.DosukoiSide.width,
+                        ASettings.DosukoiSide.height);
 
                 NSound.SEPlay(SEPattern.attack);
                 break;
             case 2:
                 NAct.NAttackV.hitBox =
-                    new Rect(hitBoxX + (0.3f * leftMinusVector),
-                        hitBoxY + 0.2f,
-                        0.4f,
-                        0.5f);
+                    new Rect(hitBoxX +
+                        (ASettings.DosukoiBack.x * leftMinusVector),
+                        hitBoxY + ASettings.DosukoiSide.y,
+                        ASettings.DosukoiSide.width,
+                        ASettings.DosukoiSide.height);
 
                 NAct.NAttackV.NowAttack = AttackPattern.None;
 
@@ -141,19 +146,19 @@ public class NekketsuAttack : MonoBehaviour
         {
             case 1:
                 NAct.NAttackV.hitBox =
-                    new Rect(hitBoxX + (0.1f * leftMinusVector),
-                        hitBoxY + 0.2f,
-                        0.6f,
-                        0.5f);
+                    new Rect(hitBoxX +
+                        (ASettings.DosukoiFront.x * leftMinusVector),
+                        hitBoxY + ASettings.DosukoiFront.y,
+                        ASettings.DosukoiFront.width,
+                        ASettings.DosukoiFront.height);
 
                 NSound.SEPlay(SEPattern.attack);
                 break;
             case 2:
-                NAct.NAttackV.hitBox =
-                    new Rect(hitBoxX + (0.1f * leftMinusVector),
-                        hitBoxY + 0.2f,
-                        0.6f,
-                        0.5f);
+                new Rect(hitBoxX + (ASettings.DosukoiFront.x * leftMinusVector),
+                    hitBoxY + ASettings.DosukoiFront.y,
+                    ASettings.DosukoiFront.width,
+                    ASettings.DosukoiFront.height);
 
                 NAct.NAttackV.NowAttack = AttackPattern.None;
 
@@ -176,10 +181,10 @@ public class NekketsuAttack : MonoBehaviour
             case 1:
                 NAct.NAttackV.NowAttack = AttackPattern.UmaHariteJump;
                 NAct.NAttackV.hitBox =
-                    new Rect(hitBoxX + (0.6f * leftMinusVector),
-                        hitBoxY + 0.2f,
-                        0.6f,
-                        0.5f);
+                    new Rect(hitBoxX + (ASettings.JumpDosukoi.x * leftMinusVector),
+                        hitBoxY + ASettings.JumpDosukoi.y,
+                        ASettings.JumpDosukoi.width,
+                        ASettings.JumpDosukoi.height);
 
                 if (NAct.NAttackV.AttackMomentFlag)
                 {
@@ -189,10 +194,10 @@ public class NekketsuAttack : MonoBehaviour
             case 2:
                 NAct.NAttackV.NowAttack = AttackPattern.UmaHariteJump;
                 NAct.NAttackV.hitBox =
-                    new Rect(hitBoxX + (0.6f * leftMinusVector),
-                        hitBoxY + 0.2f,
-                        0.6f,
-                        0.5f);
+                    new Rect(hitBoxX + (ASettings.JumpDosukoi.x * leftMinusVector),
+                        hitBoxY + ASettings.JumpDosukoi.y,
+                        ASettings.JumpDosukoi.width,
+                        ASettings.JumpDosukoi.height);
 
                 if (
                     !NAct.NJumpV.jumpFlag ||
@@ -222,27 +227,27 @@ public class NekketsuAttack : MonoBehaviour
         {
             case 1:
                 NAct.NAttackV.hitBox =
-                    new Rect(hitBoxX + (0.6f * RightMinusVector),
-                        hitBoxY + 0.2f,
-                        0.4f,
-                        0.4f);
+                    new Rect(hitBoxX + (ASettings.Hiji.x * RightMinusVector),
+                        hitBoxY + ASettings.Hiji.y,
+                        ASettings.Hiji.width,
+                        ASettings.Hiji.height);
 
                 NSound.SEPlay(SEPattern.attack);
                 break;
             case 2:
                 NAct.NAttackV.hitBox =
-                    new Rect(hitBoxX + (0.6f * RightMinusVector),
-                        hitBoxY + 0.2f,
-                        0.4f,
-                        0.4f);
+                    new Rect(hitBoxX + (ASettings.Hiji.x * RightMinusVector),
+                        hitBoxY + ASettings.Hiji.y,
+                        ASettings.Hiji.width,
+                        ASettings.Hiji.height);
 
                 break;
             case 3:
                 NAct.NAttackV.hitBox =
-                    new Rect(hitBoxX + (0.6f * RightMinusVector),
-                        hitBoxY + 0.2f,
-                        0.4f,
-                        0.4f);
+                    new Rect(hitBoxX + (ASettings.Hiji.x * RightMinusVector),
+                        hitBoxY + ASettings.Hiji.y,
+                        ASettings.Hiji.width,
+                        ASettings.Hiji.height);
 
                 NAct.NAttackV.NowAttack = AttackPattern.None;
 
@@ -264,10 +269,10 @@ public class NekketsuAttack : MonoBehaviour
         {
             case 1:
                 NAct.NAttackV.hitBox =
-                    new Rect(hitBoxX + (0.2f * leftMinusVector),
-                        hitBoxY - 0.65f,
-                        0.8f,
-                        0.4f);
+                    new Rect(hitBoxX + (ASettings.JumpKick.x * leftMinusVector),
+                        hitBoxY - ASettings.JumpKick.y,
+                        ASettings.JumpKick.width,
+                        ASettings.JumpKick.height);
 
                 if (NAct.NAttackV.AttackMomentFlag)
                 {
@@ -287,10 +292,10 @@ public class NekketsuAttack : MonoBehaviour
                 break;
             default:
                 NAct.NAttackV.hitBox =
-                    new Rect(hitBoxX + (0.2f * leftMinusVector),
-                        hitBoxY - 0.65f,
-                        0.8f,
-                        0.4f);
+                    new Rect(hitBoxX + (ASettings.JumpKick.x * leftMinusVector),
+                        hitBoxY - ASettings.JumpKick.y,
+                        ASettings.JumpKick.width,
+                        ASettings.JumpKick.height);
                 break;
         }
     }

@@ -20,9 +20,39 @@ MonoBehaviour:
     height: 0
   DosukoiSide:
     serializedVersion: 2
-    x: 0
+    x: 0.1
+    y: -0.05
+    width: 0.1
+    height: 0.1
+  DosukoiBack:
+    serializedVersion: 2
+    x: 0.1
+    y: 0.2
+    width: 0.2
+    height: 0.5
+  DosukoiFront:
+    serializedVersion: 2
+    x: 0.05
     y: 0
-    width: 0
-    height: 0
+    width: 0.2
+    height: 0.2
+  JumpDosukoi:
+    serializedVersion: 2
+    x: 0.1
+    y: -0.05
+    width: 0.1
+    height: 0.1
+  Hiji:
+    serializedVersion: 2
+    x: 0.1
+    y: -0.05
+    width: 0.1
+    height: 0.1
+  JumpKick:
+    serializedVersion: 2
+    x: 0
+    y: 0.2
+    width: 0.2
+    height: 0.1
   Damage1Time: 0.2
   Damage2Time: 0.8
