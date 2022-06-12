@@ -15,3 +15,4 @@ MonoBehaviour:
   isGamePadSetting: 1
   TopPlayerCameraX: 0
   DeathTime: 0
+  playerCount: 2

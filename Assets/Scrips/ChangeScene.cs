@@ -41,7 +41,8 @@ public class ChangeScene : MonoBehaviour
                 .GetComponent<NekketsuManager>();
 
         // データを渡す処理
-        nekketsuManager.playerCount = 1;
+        nekketsuManager.playerCount = Settings.Instance.Game.playerCount;
+        // nekketsuManager.playerCount = 2; // debug用 シーン切り替えしなくて良い用
 
         // イベントから削除
         SceneManager.sceneLoaded -= GameSceneLoaded;

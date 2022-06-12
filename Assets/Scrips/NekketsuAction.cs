@@ -31,7 +31,6 @@ public class NekketsuAction : MonoBehaviour
     private NekketsuSound NSound; //効果音
 
     // private NekketsuAttack NAttack; //攻撃処理　※現状アニメーション内で呼び出しているので不要
-
     private NekketsuMove NMove; //移動処理
 
     private NekketsuJump NJump; //ジャンプ処理
@@ -39,8 +38,6 @@ public class NekketsuAction : MonoBehaviour
     private NekketsuInput NInput; //キー入力受付
 
     private NekketsuHurtBox NHurtBox; //喰らい判定処理
-
-    private NekketsuHurtBox2 NHurtBox2; //喰らい判定処理
 
     private NekketsuStateChange NStateChange; //状態変化処理
 
@@ -158,13 +155,19 @@ public class NekketsuAction : MonoBehaviour
         {
             //倒れ状態の当たり判定(アイテム化)
             NAttackV.hurtBox =
-                new Rect(NVariable.X, NVariable.Y + NVariable.Z, NAttackV.hurtBox.height, NAttackV.hurtBox.width);
+                new Rect(NVariable.X,
+                    NVariable.Y + NVariable.Z,
+                    NAttackV.hurtBox.height,
+                    NAttackV.hurtBox.width);
         }
         else
         {
             //通常当たり判定
             NAttackV.hurtBox =
-                new Rect(NVariable.X, NVariable.Y + NVariable.Z, NAttackV.hurtBox.width, NAttackV.hurtBox.height);
+                new Rect(NVariable.X,
+                    NVariable.Y + NVariable.Z,
+                    NAttackV.hurtBox.width,
+                    NAttackV.hurtBox.height);
         }
 
 

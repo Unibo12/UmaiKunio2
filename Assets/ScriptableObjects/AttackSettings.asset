@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6c0c8c5cdc47c84f905461350666122, type: 3}
   m_Name: AttackSettings
   m_EditorClassIdentifier: 
+  defaultAttackRangeZ: 0.1
   AttackNone:
     serializedVersion: 2
     x: 0
@@ -56,3 +57,4 @@ MonoBehaviour:
     height: 0.1
   Damage1Time: 0.2
   Damage2Time: 0.8
+  DosukoiZ: 0.02

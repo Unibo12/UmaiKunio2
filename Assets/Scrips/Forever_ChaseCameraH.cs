@@ -54,9 +54,9 @@ public class Forever_ChaseCameraH : MonoBehaviour
         float[] playersX;
         int TopPlayerNum = 0;
 
-        playersX = new float[Nmng.playerCount];
+        playersX = new float[Settings.Instance.Game.playerCount];
 
-        for (int i = 0; i < Nmng.playerCount; ++i)
+        for (int i = 0; i < Settings.Instance.Game.playerCount; ++i)
         {
             playersX[i] = Nmng.Players[i].NVariable.X;
         }

@@ -370,10 +370,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d471ae6d99ac5ec46933f53a97a199f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  st_life: 140
+  st_life: 255
   st_punch: 10
   st_kick: 10
-  st_speed: 0.03
+  st_speed: 0
   st_downTime: 1
   st_brake: 0.5
   X: 0.5
@@ -1087,7 +1087,7 @@ MonoBehaviour:
   st_life: 140
   st_punch: 10
   st_kick: 10
-  st_speed: 0.02
+  st_speed: 0.01
   st_downTime: 1
   st_brake: 0.5
   X: 0

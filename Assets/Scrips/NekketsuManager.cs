@@ -44,8 +44,8 @@ public class NekketsuManager : MonoBehaviour
 
     void Start()
     {
-        Players = new NekketsuAction[playerCount];
-        for (int i = 0; i < playerCount; ++i)
+        Players = new NekketsuAction[Settings.Instance.Game.playerCount];
+        for (int i = 0; i < Settings.Instance.Game.playerCount; ++i)
         {
             // 各オブジェクトの変数を参照できるようにする。
             playerObjct = GameObject.Find("Player" + i.ToString());
