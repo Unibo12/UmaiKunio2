@@ -24,9 +24,9 @@ public sealed class AttackSettings : ScriptableObject
 
     public Rect JumpKick = new Rect(0f, 0.2f, 0.2f, 0.1f);
 
-    public float Damage1Time = 0.2f; //非凹み状態の硬直時間
+    public float Damage1Time = 0.2f; // 非凹み状態の硬直時間
 
-    public float Damage2Time = 0.8f; //凹み状態の硬直時間
+    public float Damage2Time = 0.8f; // 凹み状態の硬直時間
 
     public float DosukoiZ = 0.02f; // どすこい奥手前で飛ばされたときのZ軸距離
 }
