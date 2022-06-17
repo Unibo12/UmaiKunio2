@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class NekketsuHitboxVariable : MonoBehaviour
 {
-    float power = 0; //威力
+    float power = 0; // 威力
 
-    int attackPlayerNumber = -1; //攻撃したひと
+    int attackPlayerNumber = -1; // 攻撃したひと
 
-    float attackFrame = 0; //攻撃判定の長さ
+    float attackFrame = 0; // 攻撃判定の長さ
 
-    bool attackLeftFlag = false; //攻撃の向き
+    bool attackLeftFlag = false; // 攻撃の向き
 
-    Rect HitBox = new Rect(0, 0, 0, 0); //攻撃当たり判定
+    Rect HitBox = new Rect(0, 0, 0, 0); // 攻撃当たり判定
 
-    AttackPattern attackPattern = AttackPattern.None; //攻撃パターン
+    AttackPattern attackPattern = AttackPattern.None; // 攻撃パターン
 
     bool isAttackHit = false; // 攻撃がヒット済みか
 
