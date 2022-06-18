@@ -7,24 +7,24 @@ using UnityEngine;
 /// </summary>
 public class NekketsuHurtBox
 {
-    NekketsuAction NAct; //NekketsuActionが入る変数
+    NekketsuAction NAct; // NekketsuActionが入る変数
 
     DamageTest DmgTest;
 
     // 喰らい判定で必要な相手の情報
-    float otherPlayerX = 0; //相手のX座標
+    float otherPlayerX = 0; // 相手のX座標
 
-    float otherPlayerZ = 0; //相手のZ座標
+    float otherPlayerZ = 0; // 相手のZ座標
 
-    bool otherPlayerLeftFlag = false; //相手が左・右を向いているか
+    bool otherPlayerLeftFlag = false; // 相手が左・右を向いているか
 
-    float otherPlayerPunch = 0; //相手のぱんち力
+    float otherPlayerPunch = 0; // 相手のぱんち力
 
-    float otherPlayerKick = 0; //相手のきっく力
+    float otherPlayerKick = 0; // 相手のきっく力
 
-    AttackPattern otherPlayerAttack = AttackPattern.None; //相手の攻撃パターン
+    AttackPattern otherPlayerAttack = AttackPattern.None; // 相手の攻撃パターン
 
-    Rect otherHitBox = new Rect(0, 0, 0, 0); //相手の攻撃当たり判定
+    Rect otherHitBox = new Rect(0, 0, 0, 0); // 相手の攻撃当たり判定
 
     bool otherPlayeAttackHit = false; // 相手の攻撃がヒット済みか
 
